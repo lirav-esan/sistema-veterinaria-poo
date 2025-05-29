@@ -94,3 +94,13 @@ create table Accesos(
 	usuario nvarchar(10),
 	contra nvarchar(15),
 	constraint fk_accesos_empleados foreign key(ID) references Empleado(ID))
+
+create table Tipos_vacuna(
+	ID char(3) primary key,
+	vacuna nvarchar(15))
+	
+create table Vacunas(
+	ID_paciente char(4),
+	ID_vacuna char(3),
+	constraint fk_vacunas_paciente foreign key(ID_paciente) references Paciente(ID),
+	constraint fk_vacunas_tiposvacuna foreign key(ID_vacuna) references Tipos_vacuna(ID))
