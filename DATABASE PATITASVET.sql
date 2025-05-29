@@ -89,3 +89,8 @@ create table Estetica(
 	constraint fk_estetica_empleado foreign key(ID_empleado) references Empleado(ID),
 	constraint fk_estetica_concepto foreign key(concepto) references Concepto(ID))
 	
+create table Accesos(
+	ID char(4),
+	usuario nvarchar(10),
+	contra nvarchar(15),
+	constraint fk_accesos_empleados foreign key(ID) references Empleado(ID))
