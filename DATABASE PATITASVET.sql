@@ -69,7 +69,7 @@ create table Registro(
 	constraint fk_registro_paciente foreign key(ID_mascota) references Paciente(ID),
 	constraint fk_registro_empleado foreign key(ID_empleado) references Empleado(ID))
 	
-create table Tipos_diagnostico(
+create table Tipos_Diagnostico(
 	ID char(4) primary key,
 	diagnostico nvarchar(30))
 	
@@ -79,7 +79,7 @@ create table Diagnostico(
 	diagnostico char(4),
 	constraint fk_diagnostico_registro foreign key(ID) references Registro(ID),
 	constraint fk_diagnostico_empleado foreign key(ID_medico) references Empleado(ID),
-	constraint fk_diagnostico_tiposdiagnostico foreign key(diagnostico) references Tipos_diagnostico(ID))
+	constraint fk_diagnostico_tiposdiagnostico foreign key(diagnostico) references Tipos_Diagnostico(ID))
 	
 create table Estetica(
 	ID char(4),
@@ -95,7 +95,7 @@ create table Accesos(
 	contra nvarchar(15),
 	constraint fk_accesos_empleados foreign key(ID) references Empleado(ID))
 
-create table Tipos_vacuna(
+create table Tipos_Vacuna(
 	ID char(3) primary key,
 	vacuna nvarchar(15))
 	
@@ -103,4 +103,4 @@ create table Vacunas(
 	ID_paciente char(4),
 	ID_vacuna char(3),
 	constraint fk_vacunas_paciente foreign key(ID_paciente) references Paciente(ID),
-	constraint fk_vacunas_tiposvacuna foreign key(ID_vacuna) references Tipos_vacuna(ID))
+	constraint fk_vacunas_tiposvacuna foreign key(ID_vacuna) references Tipos_Vacuna(ID))
