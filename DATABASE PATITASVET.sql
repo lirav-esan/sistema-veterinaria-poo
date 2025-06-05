@@ -1,6 +1,6 @@
 create DATABASE PatitasVet
 
-use database PatitasVet
+use PatitasVet
 
 create table Empleado( 
 	ID char(4) primary key,
