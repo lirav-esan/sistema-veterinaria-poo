@@ -2,6 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package pooveterinaria;
 
 import java.sql.Connection;
@@ -65,11 +69,11 @@ public class ConnectToServer {
                  break;
              case "Registro":
                  t = "4";
-                 tabla = "Registros";
+                 tabla = "Registro";
                  break;
-             case "Tipo Registro":
+             case "Tipo Diagnostico":
                  t = "5";
-                 tabla = "Tipo_Registro";
+                 tabla = "Tipos_Diagnostico";
                  break;
          }
          String q = "Select top 1 Id from " + tabla + " where left(Id,1) == " + t + " order by 1 desc";
@@ -152,12 +156,12 @@ public class ConnectToServer {
     }
     public void crearPaciente  (String estado_cliente, String nombre , String apellidos , 
                                 String tipo ,String fecha_nacimiento,String fecha_fallecimiento,
-                                String sexo, String color ,String esterilizado, String longitud  ,String altura, // EDITAR
-                                String num_documento, String direccion , String telefono ,
-                                String correo, String ciudad, String distrito) throws SQLException{
+                                String sexo, String color ,String esterilizado, String longitud  ,String altura,
+                                String peso, String morfologia , String grupo_sanguineo  ,
+                                String microchip , String tatuaje , String observaciones ) throws SQLException{
         String ID, q;
         VET_Library LIB = new VET_Library();
-        ID = nextId("Cliente") + "";
+        ID = nextId("Paciente") + "";
         q = "insert into Cliente (" + 
                 ID + "," +
                 estado_cliente + "," +
@@ -165,13 +169,16 @@ public class ConnectToServer {
                 apellidos + "," +
                 ((LIB.FechaOK(fecha_nacimiento, 1969, 2025, true))? fecha_nacimiento: null) + "," +
                 sexo + "," +
-                color + "," + // EDITAR
-                num_documento + "," +
-                direccion + "," +
-                telefono + "," +
-                correo + "," +
-                ciudad + "," +
-                distrito + "," + // nop se si TENGO que añadir fecha registro al tener val default
+                color + "," + 
+                esterilizado + "," +
+                longitud + "," +
+                altura + "," +
+                peso + "," +
+                morfologia + "," +
+                grupo_sanguineo + "," + 
+                microchip + "," +
+                tatuaje + "," +
+                observaciones + "," +
                 ")";
         try {
             PreparedStatement creacion = conn.prepareStatement(q);
@@ -179,6 +186,39 @@ public class ConnectToServer {
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Error: " + ex);
         }
-        JOptionPane.showMessageDialog(null, "Cliente registrado con exito");
+        JOptionPane.showMessageDialog(null, "Paciente registrado con exito");
+    }
+    public void crearRegistro  (String ID_mascota, String ID_empleado) throws SQLException{
+        String ID, q;
+        VET_Library LIB = new VET_Library();
+        ID = nextId("Registro") + "";
+        q = "insert into Cliente (" + 
+                ID + "," +
+                ID_mascota + "," +
+                ID_empleado + "," +
+                ")";
+        try {
+            PreparedStatement creacion = conn.prepareStatement(q);
+            creacion.execute();
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error: " + ex);
+        }
+        JOptionPane.showMessageDialog(null, "Registro registrado con exito");
+    }
+    public void crearTipoDiagnostico  (String diagnostico) throws SQLException{
+        String ID, q;
+        VET_Library LIB = new VET_Library();
+        ID = nextId("Tipo Diagnostico") + "";
+        q = "insert into Cliente (" + 
+                ID + "," +
+                diagnostico + "," +
+                ")";
+        try {
+            PreparedStatement creacion = conn.prepareStatement(q);
+            creacion.execute();
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error: " + ex);
+        }
+        JOptionPane.showMessageDialog(null, "Tipo Diagnostico registrado con exito");
     }
 }
