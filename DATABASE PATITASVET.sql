@@ -32,11 +32,11 @@ create table Cliente(
 	
 create table Tipos_Mascota(
 	ID char(4) primary key,
-	nombre nvarchar(15))
+	nombre nvarchar(25))
 	
 create table Concepto(
 	ID char(2) primary key,
-	concepto nvarchar(20))
+	concepto nvarchar(30))
 	
 create table Paciente(
 	ID char(4) primary key,
@@ -71,7 +71,7 @@ create table Registro(
 	
 create table Tipos_Diagnostico(
 	ID char(4) primary key,
-	diagnostico nvarchar(30))
+	diagnostico nvarchar(50))
 	
 create table Diagnostico(
 	ID char(4),
@@ -97,7 +97,7 @@ create table Accesos(
 
 create table Tipos_Vacuna(
 	ID char(3) primary key,
-	vacuna nvarchar(15))
+	vacuna nvarchar(30))
 	
 create table Vacunas(
 	ID_paciente char(4),
