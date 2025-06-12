@@ -91,7 +91,7 @@ public class ConnectToServer {
     }
     // PLACEHOLDER EDITAR EN CASITA
     public void AddColumnFromTable(String TABLA, String COLUMNA, String TIPO, String LEN) throws SQLException{
-        String q = "alter table " + TABLA.trim() + " drop column " + COLUMNA.trim() + " " + TIPO.trim();
+        String q = "alter table " + TABLA.trim() + " add column " + COLUMNA.trim() + " " + TIPO.trim();
         if (TIPO == "varchar" || TIPO == "char" || TIPO == "decimal"){
             if (TIPO == "decimal" && !LEN.contains(",")){
                 JOptionPane.showMessageDialog(null, "Formato inadecuado para variable decimal \n (a,b)");
@@ -105,7 +105,7 @@ public class ConnectToServer {
         
     }
     public void EditColumnFromTable(String TABLA, String COLUMNA, String TIPO, String LEN) throws SQLException{
-        String q = "alter table " + TABLA.trim() + " drop column " + COLUMNA.trim() + " " + TIPO.trim();
+        String q = "alter table " + TABLA.trim() + " alter column " + COLUMNA.trim() + " " + TIPO.trim();
         if (TIPO == "varchar" || TIPO == "char" || TIPO == "decimal"){
             if (TIPO == "decimal" && !LEN.contains(",")){
                 JOptionPane.showMessageDialog(null, "Formato inadecuado para variable decimal \n (a,b)");
@@ -120,6 +120,14 @@ public class ConnectToServer {
     }
     public void DropColumnFromTable(String TABLA, String COLUMNA, String TIPO, String LEN) throws SQLException{
         String q = "alter table " + TABLA.trim() + " drop column " + COLUMNA.trim();
+        PreparedStatement pst = conn.prepareStatement(q);
+        pst.execute();
+        
+    }
+    public void UpdateColumnFromTable(String TABLA, String COLUMNA, String TIPO, String DATA, String ID) throws SQLException{
+        String q = "update table " + TABLA.trim() + 
+                " set column " + COLUMNA.trim() + " = " + DATA.trim() + 
+                " where ID = " + ID.trim();
         PreparedStatement pst = conn.prepareStatement(q);
         pst.execute();
         
@@ -150,14 +158,7 @@ public class ConnectToServer {
         }
         JOptionPane.showMessageDialog(null, "Empleado registrado con exito");
     }
-    public void UpdateColumnFromTable(String TABLA, String COLUMNA, String TIPO, String DATA, String ID) throws SQLException{
-        String q = "update table " + TABLA.trim() + 
-                " set column " + COLUMNA.trim() + " = " + DATA.trim() + 
-                " where ID = " + ID.trim();
-        PreparedStatement pst = conn.prepareStatement(q);
-        pst.execute();
-        
-    }
+    
     public void crearCliente   (String estado_cliente, String nombre , String apellidos , 
                                 String fecha_nacimiento, String genero, String tipo_doc,
                                 String num_documento, String direccion , String telefono ,
