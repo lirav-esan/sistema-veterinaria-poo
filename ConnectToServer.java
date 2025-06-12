@@ -90,9 +90,39 @@ public class ConnectToServer {
         return verif;
     }
     // PLACEHOLDER EDITAR EN CASITA
-    public void editTABLA(String a, String b, String c, String d){
-        // cambia mascotas(edad,fecvha muerte), clientes(edad, residencia), empelados(contrato, rol), accesos(conrta, usuario)
-        // obvio funciones separadas que weba jutnar 3 tablas en una func
+    public void AddColumnFromTable(String TABLA, String COLUMNA, String TIPO, String LEN) throws SQLException{
+        String q = "alter table " + TABLA.trim() + " drop column " + COLUMNA.trim() + " " + TIPO.trim();
+        if (TIPO == "varchar" || TIPO == "char" || TIPO == "decimal"){
+            if (TIPO == "decimal" && !LEN.contains(",")){
+                JOptionPane.showMessageDialog(null, "Formato inadecuado para variable decimal \n (a,b)");
+                return;
+            }
+            q += "(" + LEN + ")";
+            
+        }
+        PreparedStatement pst = conn.prepareStatement(q);
+        pst.execute();
+        
+    }
+    public void EditColumnFromTable(String TABLA, String COLUMNA, String TIPO, String LEN) throws SQLException{
+        String q = "alter table " + TABLA.trim() + " drop column " + COLUMNA.trim() + " " + TIPO.trim();
+        if (TIPO == "varchar" || TIPO == "char" || TIPO == "decimal"){
+            if (TIPO == "decimal" && !LEN.contains(",")){
+                JOptionPane.showMessageDialog(null, "Formato inadecuado para variable decimal \n (a,b)");
+                return;
+            }
+            q += "(" + LEN + ")";
+            
+        }
+        PreparedStatement pst = conn.prepareStatement(q);
+        pst.execute();
+        
+    }
+    public void DropColumnFromTable(String TABLA, String COLUMNA, String TIPO, String LEN) throws SQLException{
+        String q = "alter table " + TABLA.trim() + " drop column " + COLUMNA.trim();
+        PreparedStatement pst = conn.prepareStatement(q);
+        pst.execute();
+        
     }
     public void crearEmpleado  (String nombre, String apellidos, String fechaNac, 
                                 String genero, String tipoDoc, String numDoc,
@@ -119,6 +149,14 @@ public class ConnectToServer {
             JOptionPane.showMessageDialog(null, "Error: " + ex);
         }
         JOptionPane.showMessageDialog(null, "Empleado registrado con exito");
+    }
+    public void UpdateColumnFromTable(String TABLA, String COLUMNA, String TIPO, String DATA, String ID) throws SQLException{
+        String q = "update table " + TABLA.trim() + 
+                " set column " + COLUMNA.trim() + " = " + DATA.trim() + 
+                " where ID = " + ID.trim();
+        PreparedStatement pst = conn.prepareStatement(q);
+        pst.execute();
+        
     }
     public void crearCliente   (String estado_cliente, String nombre , String apellidos , 
                                 String fecha_nacimiento, String genero, String tipo_doc,
@@ -158,7 +196,7 @@ public class ConnectToServer {
         String ID, q;
         VET_Library LIB = new VET_Library();
         ID = nextId("Paciente") + "";
-        q = "insert into Cliente (" + 
+        q = "insert into Paciente (" + 
                 ID + "," +
                 estado_cliente + "," +
                 nombre + "," +
@@ -188,7 +226,7 @@ public class ConnectToServer {
         String ID, q;
         VET_Library LIB = new VET_Library();
         ID = nextId("Registro") + "";
-        q = "insert into Cliente (" + 
+        q = "insert into Registro (" + 
                 ID + "," +
                 ID_mascota + "," +
                 ID_empleado + "," +
@@ -205,7 +243,7 @@ public class ConnectToServer {
         String ID, q;
         VET_Library LIB = new VET_Library();
         ID = nextId("Tipo Diagnostico") + "";
-        q = "insert into Cliente (" + 
+        q = "insert into Tipos_Diagnostico (" + 
                 ID + "," +
                 diagnostico + "," +
                 ")";
