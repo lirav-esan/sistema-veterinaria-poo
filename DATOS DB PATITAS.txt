@@ -254,16 +254,16 @@ INSERT INTO Paciente VALUES ('M147', 'C102', 'Titán', 'Rivas', '0412', '2021-07
 INSERT INTO Paciente VALUES ('M148', 'C103', 'Sombra', 'Delgado', '0413', '2022-03-16', NULL, 'M', 'Negro', 1, 170, 160, 455, 'Grande', 'O-', 1, 0, 'Muy callado');
 INSERT INTO Paciente VALUES ('M149', 'C104', 'Tormenta', 'Estrada', '0414', '2020-09-13', NULL, 'F', 'Blanco', 0, 140, 130, 390, 'Mediana', 'A-', 0, 0, 'Muy inquieta');
 INSERT INTO Paciente VALUES ('M150', 'C105', 'Sol', 'Espinoza', '0415', '2021-11-20', NULL, 'F', 'Castaño', 1, 142, 132, 395, 'Mediana', 'B+', 1, 1, 'Brillante');
-INSERT INTO Paciente VALUES ('M151', 'C106', 'Copito', 'Quispe', '0416', '2018-12-01', NULL, 'M', 'Blanco', 1, 135, 125, 385, 'Mediana', 'AB-', 1, 0, 'Muy amigable');
-INSERT INTO Paciente VALUES ('M152', 'C107', 'Brisa', 'García', '0417', '2019-05-17', NULL, 'F', 'Negro', 0, 138, 128, 390, 'Mediana', 'O+', 0, 0, 'Sociable y tranquila');
-INSERT INTO Paciente VALUES ('M153', 'C108', 'Montana', 'Salinas', '0418', '2020-01-10', NULL, 'M', 'Marrón', 1, 160, 150, 430, 'Grande', 'A+', 1, 1, 'Resistente');
-INSERT INTO Paciente VALUES ('M154', 'C109', 'Canelo', 'Paredes', '0101', '2021-06-25', NULL, 'M', 'Dorado', 1, 45, 35, 12, 'Mediana', 'B-', 0, 0, 'Dócil y alegre');
-INSERT INTO Paciente VALUES ('M155', 'C110', 'Luna', 'Cruz', '0202', '2022-03-05', NULL, 'F', 'Gris', 1, 30, 25, 5, 'Pequeña', 'O-', 1, 0, 'Muy cariñosa');
-INSERT INTO Paciente VALUES ('M156', 'C111', 'Manchitas', 'Yupanqui', '0304', '2021-09-18', NULL, 'M', 'Blanco', 0, 28, 24, 3, 'Pequeña', 'A-', 0, 0, 'Muy juguetón');
-INSERT INTO Paciente VALUES ('M157', 'C112', 'Zeus', 'Carranza', '0115', '2020-07-30', NULL, 'M', 'Negro', 1, 65, 50, 30, 'Grande', 'AB+', 1, 1, 'Protector');
-INSERT INTO Paciente VALUES ('M158', 'C113', 'Pelusa', 'Villanueva', '0206', '2022-10-12', NULL, 'F', 'Blanco', 1, 27, 22, 4, 'Pequeña', 'B+', 0, 0, 'Suave y tranquila');
-INSERT INTO Paciente VALUES ('M159', 'C114', 'Chispa', 'Lozano', '0120', '2020-02-14', NULL, 'M', 'Marrón', 1, 55, 42, 20, 'Mediana', 'A+', 1, 1, 'Activo y curioso');
-INSERT INTO Paciente VALUES ('M160', 'C115', 'Miel', 'Rosales', '0204', '2021-04-08', NULL, 'F', 'Beige', 0, 31, 26, 5, 'Pequeña', 'O+', 0, 0, 'Calma y dulce');
+INSERT INTO Paciente VALUES ('M151', 'C076', 'Copito', 'Quispe', '0416', '2018-12-01', NULL, 'M', 'Blanco', 1, 135, 125, 385, 'Mediana', 'AB-', 1, 0, 'Muy amigable');
+INSERT INTO Paciente VALUES ('M152', 'C049', 'Brisa', 'García', '0417', '2019-05-17', NULL, 'F', 'Negro', 0, 138, 128, 390, 'Mediana', 'O+', 0, 0, 'Sociable y tranquila');
+INSERT INTO Paciente VALUES ('M153', 'C068', 'Montana', 'Salinas', '0418', '2020-01-10', NULL, 'M', 'Marrón', 1, 160, 150, 430, 'Grande', 'A+', 1, 1, 'Resistente');
+INSERT INTO Paciente VALUES ('M154', 'C009', 'Canelo', 'Paredes', '0101', '2021-06-25', NULL, 'M', 'Dorado', 1, 45, 35, 12, 'Mediana', 'B-', 0, 0, 'Dócil y alegre');
+INSERT INTO Paciente VALUES ('M155', 'C010', 'Luna', 'Cruz', '0202', '2022-03-05', NULL, 'F', 'Gris', 1, 30, 25, 5, 'Pequeña', 'O-', 1, 0, 'Muy cariñosa');
+INSERT INTO Paciente VALUES ('M156', 'C081', 'Manchitas', 'Yupanqui', '0304', '2021-09-18', NULL, 'M', 'Blanco', 0, 28, 24, 3, 'Pequeña', 'A-', 0, 0, 'Muy juguetón');
+INSERT INTO Paciente VALUES ('M157', 'C012', 'Zeus', 'Carranza', '0115', '2020-07-30', NULL, 'M', 'Negro', 1, 65, 50, 30, 'Grande', 'AB+', 1, 1, 'Protector');
+INSERT INTO Paciente VALUES ('M158', 'C013', 'Pelusa', 'Villanueva', '0206', '2022-10-12', NULL, 'F', 'Blanco', 1, 27, 22, 4, 'Pequeña', 'B+', 0, 0, 'Suave y tranquila');
+INSERT INTO Paciente VALUES ('M159', 'C074', 'Chispa', 'Lozano', '0120', '2020-02-14', NULL, 'M', 'Marrón', 1, 55, 42, 20, 'Mediana', 'A+', 1, 1, 'Activo y curioso');
+INSERT INTO Paciente VALUES ('M160', 'C025', 'Miel', 'Rosales', '0204', '2021-04-08', NULL, 'F', 'Beige', 0, 31, 26, 5, 'Pequeña', 'O+', 0, 0, 'Calma y dulce');
 
 INSERT INTO Empleado VALUES ('E001', 'Lucía', 'Fernández', '1990-04-12', 'F', 'D', '43215678', 'Av. Grau 123, Lima', '987654321', 'luciaf@vet.com');
 INSERT INTO Empleado VALUES ('E002', 'Carlos', 'Ramírez', '1985-06-25', 'M', 'D', '40123456', 'Jr. Ayacucho 456, Lima', '912345678', 'carlosr@vet.com');
@@ -548,4 +548,3 @@ INSERT INTO Estetica VALUES ('R022', 'E004', '08');
 INSERT INTO Estetica VALUES ('R034', 'E008', '05');
 INSERT INTO Estetica VALUES ('R048', 'E006', '01');
 INSERT INTO Estetica VALUES ('R009', 'E001', '02');
-
