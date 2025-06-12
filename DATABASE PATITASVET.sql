@@ -12,7 +12,7 @@ create table Empleado(
 	num_documento varchar(8),
 	direccion nvarchar(30),
 	telefono varchar(9),
-	correo nvarchar(15))
+	correo nvarchar(25))
 	
 create table Cliente(
 	ID char(4) primary key,
@@ -25,7 +25,7 @@ create table Cliente(
 	num_documento varchar(8),
 	direccion nvarchar(30),
 	telefono varchar(9),
-	correo nvarchar(15),
+	correo nvarchar(25),
 	ciudad nvarchar(15),
 	distrito nvarchar(15),
 	fecha_registro date default getdate())
