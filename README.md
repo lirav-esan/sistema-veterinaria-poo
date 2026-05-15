@@ -1,3 +1,2 @@
 # sistema-veterinaria-poo
-im ded brah
-blow me
+Sistema de veterinaria 100% hecho en java para un proyecto de POO
